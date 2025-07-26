@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile -t matheeshworks/madworks:latest
-      run: docker login -u matheeshworks -p "${{secrets.DOCKERTOKEN}}"
-      run: docker push matheeshworks/madworks:latest
+      run: docker build . --file Dockerfile -t madworks
+           docker tag madworks matheeshworks/madworks:latest
+           docker login -u matheeshworks -p "${{secrets.DOCKERTOKEN}}"
+           docker push matheeshworks/madworks:latest
