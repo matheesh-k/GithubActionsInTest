@@ -18,7 +18,7 @@ jobs:
       run: docker build . --file Dockerfile -t madworks
     - name: tagging the image
       run: docker tag madworks matheeshworks/madworks:latest
-    - name: login to docker
-      run: docker login -u matheeshworks -p "${{secrets.DOCKERTOKEN}}"
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKERTOKEN }}" | docker login -u matheeshworks --password-stdin
     - name: push the image to docker hub
       run: docker push matheeshworks/madworks:latest
