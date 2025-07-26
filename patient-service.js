@@ -2,7 +2,8 @@ const express = require('express');
     const app = express();
     const port = process.env.PORT || 3000;
     app.use(express.json());
-    
+
+
     // In-memory data store (replace with a database in a real application)
     let patients = [
       { id: '1', name: 'John Doe', age: 30, condition: 'Healthy' },
