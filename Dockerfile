@@ -1,5 +1,5 @@
 #not sure which version to use, just going with latest
-FROM node/latest
+FROM node:latest
 
 #setting the working directory as app
 WORKDIR "/app"
